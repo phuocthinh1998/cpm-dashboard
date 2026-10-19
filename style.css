@@ -1,0 +1,50 @@
+:root{--navy:#0b2038;--ink:#172133;--muted:#6b778c;--bg:#f3f6fa;--line:#dfe6ee;--blue:#246bfe;--teal:#00a6a6;--orange:#f59e0b;--purple:#7c3aed;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}.topbar{background:linear-gradient(120deg,#081d34,#153e68);color:white;padding:22px max(24px,calc((100vw - 1380px)/2));display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:0 4px 18px #1029442b}.topbar h1{margin:1px 0 0;font-size:25px}.eyebrow{margin:0;color:#9ec9ff;font-size:11px;font-weight:700;letter-spacing:1.7px}.header-actions{display:flex;gap:10px}button{border:0;border-radius:9px;background:var(--blue);color:#fff;padding:11px 17px;font-weight:700;cursor:pointer;transition:.2s}button:hover{filter:brightness(.96);transform:translateY(-1px)}button:disabled{opacity:.45;cursor:not-allowed;transform:none}.secondary{background:white;color:#24415e;border:1px solid #cdd8e5}main{max-width:1380px;margin:22px auto;padding:0 20px}.upload-panel{background:white;border:1.5px dashed #b9c9dc;border-radius:14px;padding:17px 22px;display:flex;align-items:center;gap:16px;cursor:pointer}.upload-panel.drag{border-color:var(--blue);background:#edf5ff}.upload-icon{width:45px;height:45px;border-radius:12px;background:#eaf2ff;color:var(--blue);display:grid;place-items:center;font-size:24px;font-weight:900}.upload-panel p{margin:3px 0;color:var(--muted)}.file-badge{margin-left:auto;background:#edf2f7;color:#45576c;padding:7px 11px;border-radius:100px;max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.controlbar{display:flex;align-items:end;gap:12px;margin:16px 0}.controlbar label{font-size:12px;color:var(--muted);font-weight:700}.controlbar select{display:block;margin-top:5px;min-width:165px;padding:10px;border:1px solid #ccd7e4;border-radius:8px;background:white;color:var(--ink)}.status{margin-left:auto;color:var(--muted);padding-bottom:9px}.status.ok{color:#087a61}.status.error{color:#be123c}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}.kpi{position:relative;background:white;padding:19px;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 2px 8px #23354a0a}.kpi:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:currentColor}.kpi span,.kpi small{color:var(--muted)}.kpi strong{display:block;color:var(--ink);font-size:29px;margin:5px 0 2px}.kpi.blue{color:var(--blue)}.kpi.teal{color:var(--teal)}.kpi.orange{color:var(--orange)}.kpi.purple{color:var(--purple)}.grid.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{background:white;border:1px solid var(--line);border-radius:13px;padding:18px;margin-bottom:14px;box-shadow:0 2px 8px #23354a0a}.panel.wide{grid-column:1/-1}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}.panel h2{font-size:16px;margin:0}.panel p{color:var(--muted);font-size:12px;margin:3px 0 0}.legend{color:var(--muted);font-size:12px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin:0 4px 0 10px}.dot.hours{background:var(--blue)}.dot.jobs{background:var(--orange)}.chart{min-height:280px}.bars,.horizontal{display:flex;flex-direction:column;justify-content:center;gap:10px}.bar-row{display:grid;grid-template-columns:105px 1fr 72px;gap:10px;align-items:center}.bar-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}.bar-track{height:12px;background:#edf1f6;border-radius:10px;overflow:hidden}.bar-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#246bfe,#62a0ff);min-width:0}.bar-value{text-align:right;font-variant-numeric:tabular-nums;color:#45576c}.donut-wrap{display:flex;align-items:center;justify-content:center;gap:30px}.donut{width:190px;height:190px;border-radius:50%;position:relative}.donut:after{content:"";position:absolute;inset:38px;background:#fff;border-radius:50%}.donut-center{position:absolute;z-index:2;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}.donut-center strong{font-size:23px}.donut-center span{font-size:11px;color:var(--muted)}.donut-legend{min-width:175px}.legend-row{display:grid;grid-template-columns:10px 1fr auto;gap:8px;align-items:center;margin:8px 0}.legend-swatch{width:9px;height:9px;border-radius:3px}.trend-svg{width:100%;height:280px;display:block}.gridline{stroke:#e7edf4;stroke-width:1}.axistext{fill:#778396;font-size:11px}.hour-line{fill:none;stroke:var(--blue);stroke-width:3}.job-line{fill:none;stroke:var(--orange);stroke-width:3}.hour-area{fill:url(#areaGradient)}.point-hours{fill:white;stroke:var(--blue);stroke-width:2}.point-jobs{fill:white;stroke:var(--orange);stroke-width:2}.tooltip-title{font-weight:700}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse}th,td{padding:11px 12px;border-bottom:1px solid #e7edf4;text-align:right;white-space:nowrap}th{background:#f7f9fc;color:#536176;font-size:12px}th:first-child,td:first-child{text-align:left}tbody tr:hover{background:#f8fbff}.empty{text-align:center!important;color:var(--muted);padding:35px}footer{text-align:center;color:#7c8797;padding:10px 20px 30px;font-size:12px}.error-box{padding:16px;color:#9f1239;background:#fff1f2;border:1px solid #fecdd3;border-radius:10px} @media(max-width:850px){.topbar{align-items:flex-start;flex-direction:column}.kpis{grid-template-columns:1fr 1fr}.grid.two{grid-template-columns:1fr}.panel.wide{grid-column:auto}.controlbar{flex-wrap:wrap}.status{width:100%;margin:0}.donut-wrap{flex-direction:column}.file-badge{display:none}}@media(max-width:520px){.kpis{grid-template-columns:1fr}.header-actions{width:100%}.header-actions button{flex:1}.bar-row{grid-template-columns:85px 1fr 58px}}.password-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(8,18,35,.96);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+}
+
+.password-box{
+  width:360px;
+  background:#fff;
+  padding:28px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.password-box h2{
+  margin:0 0 10px;
+  color:#12345c;
+}
+
+.password-box p{
+  margin-bottom:16px;
+}
+
+.password-box input{
+  width:100%;
+  padding:12px;
+  border:1px solid #d5dbe5;
+  border-radius:8px;
+  box-sizing:border-box;
+}
+
+.password-box button{
+  width:100%;
+  margin-top:12px;
+}
+
+.password-error{
+  color:#dc2626;
+  margin-top:10px;
+  font-size:13px;
+}
+
+.hidden{
+  display:none !important;
+}
