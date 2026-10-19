@@ -1,5 +1,9 @@
 const APP_PASSWORD = "cpm@2026";
 
+const AUTH_KEY = "dashboard_auth";
+const AUTH_TIME_KEY = "dashboard_auth_time";
+const SESSION_TIMEOUT = 5 * 60 * 1000; // 5 phút
+
 window.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("passwordOverlay");
     const input = document.getElementById("passwordInput");
@@ -8,15 +12,74 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!overlay) return;
 
-    if (localStorage.getItem("dashboard_auth") === "ok") {
+    function logout() {
+        localStorage.removeItem(AUTH_KEY);
+        localStorage.removeItem(AUTH_TIME_KEY);
+
+        report = null;
+
+        overlay.classList.remove("hidden");
+
+        input.value = "";
+        error.textContent = "";
+
+        const fileName = document.getElementById("fileName");
+        const summaryBody = document.getElementById("summaryBody");
+
+        if (fileName) {
+            fileName.textContent = "No file selected";
+        }
+
+        if (summaryBody) {
+            summaryBody.innerHTML = `
+                <tr>
+                    <td colspan="5" class="empty">
+                        Session expired. Please login again.
+                    </td>
+                </tr>
+            `;
+        }
+
+        input.focus();
+    }
+
+    function startSessionTimer(remaining = SESSION_TIMEOUT) {
+        setTimeout(() => {
+            alert("Session expired. Please login again.");
+            logout();
+        }, remaining);
+    }
+
+    const auth = localStorage.getItem(AUTH_KEY);
+    const loginTime = Number(localStorage.getItem(AUTH_TIME_KEY) || 0);
+
+    if (
+        auth === "ok" &&
+        loginTime &&
+        Date.now() - loginTime < SESSION_TIMEOUT
+    ) {
         overlay.classList.add("hidden");
+
+        startSessionTimer(
+            SESSION_TIMEOUT - (Date.now() - loginTime)
+        );
+
         return;
     }
 
     function login() {
         if (input.value === APP_PASSWORD) {
-            localStorage.setItem("dashboard_auth", "ok");
+
+            localStorage.setItem(AUTH_KEY, "ok");
+            localStorage.setItem(
+                AUTH_TIME_KEY,
+                Date.now()
+            );
+
             overlay.classList.add("hidden");
+
+            startSessionTimer();
+
         } else {
             error.textContent = "Incorrect password";
             input.value = "";
